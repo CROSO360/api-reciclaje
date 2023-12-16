@@ -5,18 +5,16 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { DispositivoModule } from './dispositivo/dispositivo.module';
 import { SolicitudModule } from './solicitud/solicitud.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.DB_HOST,
-      port: parseInt(process.env.DB_PORT),
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      host: '212.1.208.199',
+      port: 3306,
+      username: 'u312507976_db63',
+      password: '5Bg1123-2',
+      database: 'u312507976_db63',
       autoLoadEntities: true,
     }),
     UsuarioModule, DispositivoModule, SolicitudModule
